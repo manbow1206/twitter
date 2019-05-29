@@ -16,7 +16,6 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -30,7 +29,6 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
@@ -50,6 +48,12 @@
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item" style="display:flex; justify-content: center;align-items: center;">
+                              <a class="navbar-brand" href="/users/index" style="font-size:13px">
+                                  {{ __('User List') }}
+                                  <!-- {{ config('app.name', 'Laravel') }} -->
+                              </a>
+                          </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -68,6 +72,11 @@
                                 </div>
                             </li>
                         @endguest
+                        <div class="mb-4">
+                      <a href="{{ route('posts.create') }}" class="btn btn-primary" style="display:flex; justify-content: center;align-items: center;">
+                         ツイートする！
+                      </a>
+                    </div>
                     </ul>
                 </div>
             </div>

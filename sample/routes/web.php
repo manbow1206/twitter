@@ -25,6 +25,9 @@ Route::resource('posts', 'PostsController', ['only' => ['create', 'store','show'
 
 Route::resource('comments', 'CommentsController', ['only' => ['store']]);
 
+// users
+Route::get('/users/index','UsersController@index');
+
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');

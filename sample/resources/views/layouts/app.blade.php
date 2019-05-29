@@ -49,6 +49,13 @@
                                 </li>
                             @endif
                         @else
+
+                        <li class="nav-item" style="display:flex; justify-content: center;align-items: center;">
+                              <a class="navbar-brand" href="/users/index" style="font-size:13px">
+                                  {{ __('User List') }}
+                                  <!-- {{ config('app.name', 'Laravel') }} -->
+                              </a>
+                          </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -67,6 +74,12 @@
                                 </div>
                             </li>
                         @endguest
+
+                        <div class="mb-4">
+                      <a href="{{ route('posts.create') }}" class="btn btn-primary" style="display:flex; justify-content: center;align-items: center;">
+                         ツイートする！
+                      </a>
+                    </div>
                     </ul>
                 </div>
             </div>
