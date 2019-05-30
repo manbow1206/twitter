@@ -77,7 +77,7 @@
 
                         <div class="mb-4">
                       <a href="{{ route('posts.create') }}" class="btn btn-primary" style="display:flex; justify-content: center;align-items: center;">
-                         ツイートする！
+                         let`s Tweet!
                       </a>
                     </div>
                     </ul>
