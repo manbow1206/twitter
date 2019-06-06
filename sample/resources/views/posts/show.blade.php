@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 
@@ -7,7 +7,7 @@
       <!--編集ボタン-->
       <div class="mb-4 text-right">
         <a class="btn btn-primary" href="{{ route('posts.edit', ['post' => $post]) }}">
-          編集する
+          Edit!
         </a>
         <!--削除ボタン-->
         <form
@@ -17,7 +17,7 @@
         >
         @csrf
         @method('DELETE')
-        <button class="btn btn-danger">削除する</button>
+        <button class="btn btn-danger">Delete!</button>
       </form>
     </div>
 
@@ -32,7 +32,7 @@
 
             <section>
                 <h2 class="h5 mb-4">
-                    コメント
+                    Comment
                 </h2>
                 <form class="mb-4" method="POST" action="{{ route('comments.store') }}">
     @csrf
@@ -45,7 +45,7 @@
 
     <div class="form-group">
         <label for="body">
-            本文
+            Text
         </label>
 
         <textarea
@@ -63,7 +63,7 @@
 
     <div class="mt-4">
         <button type="submit" class="btn btn-primary">
-            コメントする
+            Done!!
         </button>
     </div>
 </form>
@@ -78,7 +78,7 @@
                         </p>
                     </div>
                 @empty
-                    <p>コメントはまだありません。</p>
+                    <p>Not Commen~</p>
                 @endforelse
             </section>
         </div>
