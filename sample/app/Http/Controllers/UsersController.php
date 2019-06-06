@@ -13,10 +13,9 @@ class UsersController extends Controller
     $this->middleware('auth');
   }
 
-  public function index() {
+  public function index(Request $request) {
 
     $users = User::whereNotIn('id',[Auth::user()->id])->paginate(5);
-
     return view('users.index',['userDate' => $users]);
   }
 }

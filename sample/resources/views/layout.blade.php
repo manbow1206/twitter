@@ -23,8 +23,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{ url('/') }}" style="font-size: 30px">
+                  TweetApp
+                  <!--{{ config('app.name', 'Laravel') }}-->
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -40,43 +41,56 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}" style="padding-top : 20px ;font-size:20px">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}" style="padding-top : 20px ;font-size:20px">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-                        <li class="nav-item" style="display:flex; justify-content: center;align-items: center;">
-                              <a class="navbar-brand" href="/users/index" style="font-size:13px">
+                        <li class="nav-item" style="display:flex; justify-content: center;align-items: center;" style="font-size:30px">
+                              <a class="navbar-brand" href="/users/index" >
                                   {{ __('User List') }}
                                   <!-- {{ config('app.name', 'Laravel') }} -->
                               </a>
+                              <a class="navbar-brand" href="/profile" >
+                                  {{ __('My Profile') }}
+                                  <!-- {{ config('app.name', 'Laravel') }} -->
+                              </a>
+                              <a class="navbar-brand" href="/" >
+                                  {{ __('TimeLine') }}
+                                  <!-- {{ config('app.name', 'Laravel') }} -->
+                              </a>
                           </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+
+                            <li class="nav-item dropdown" style="padding-top: 13px">
+                                <a id="navbarDropdown" style="font-size: 20px" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="margin-bottom: 20px">
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
                             </li>
+
+                            <div class="mb-4" style="padding-top: 15px">
+                          <a href="{{ route('posts.create') }}" class="btn btn-primary" style="display:flex; justify-content: center;align-items: center; " >
+                             let`s Tweet!
+                          </a>
+                        </div>
+
                         @endguest
-                        <div class="mb-4">
-                      <a href="{{ route('posts.create') }}" class="btn btn-primary" style="display:flex; justify-content: center;align-items: center;">
-                         ツイートする！
-                      </a>
-                    </div>
                     </ul>
                 </div>
             </div>

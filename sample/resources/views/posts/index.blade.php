@@ -16,18 +16,18 @@
                     </p>
 
                     <a class="card-link" href="{{ route('posts.show', ['post' => $post]) }}">
-                      続きを読む
+                      More!
                     </a>
 
                 </div>
                 <div class="card-footer">
                     <span class="mr-2">
-                        投稿日時 {{ $post->created_at->format('Y.m.d') }}
+                        Post Time {{ $post->created_at->format('Y.m.d') }}
                     </span>
 
                     @if ($post->comments->count())
                         <span class="badge badge-primary">
-                            コメント {{ $post->comments->count() }}件
+                            Comments {{ $post->comments->count() }}件
                         </span>
                     @endif
                 </div>

@@ -18,16 +18,20 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+//index
 Route::get('/', 'PostsController@index')->name('top');
-
+//post
 Route::resource('posts', 'PostsController', ['only' => ['create', 'store','show','edit','update','destroy']]);
-
+//comment
 Route::resource('comments', 'CommentsController', ['only' => ['store']]);
-
-// users
+//Users
 Route::get('/users/index','UsersController@index');
-
+//Auth
 Auth::routes();
+//profile
+Route::get('profile', 'PostsController@profile')->name('profile');
 
-//Route::get('/home', 'HomeController@index')->name('home');
+
+//Follow
+Route::post('follow/create','LikeController@create')->name('like');
+Route::post('follow/delete','LikeController@delete')->name('unlike');

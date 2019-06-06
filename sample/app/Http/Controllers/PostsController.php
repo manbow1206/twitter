@@ -79,4 +79,9 @@ class PostsController extends Controller
 
     return redirect()->route('top');
   }
+
+  public function profile()
+  {
+    return view('users.profile');
+  }
 }
