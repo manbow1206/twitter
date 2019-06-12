@@ -18,7 +18,7 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-//index
+//NOTE: 投稿一覧　名前:top
 Route::get('/', 'PostsController@index')->name('top');
 //post
 Route::resource('posts', 'PostsController', ['only' => ['create', 'store','show','edit','update','destroy']]);

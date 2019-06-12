@@ -45,7 +45,7 @@
 
     <div class="form-group">
         <label for="body">
-            Text
+             Text
         </label>
 
         <textarea

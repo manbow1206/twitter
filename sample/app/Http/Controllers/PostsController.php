@@ -7,10 +7,13 @@ use App\Post;
 
 class PostsController extends Controller
 {
+
+    //NOTE: POSTテーブルからcreated_atカラムの降順（最新）取得し、$postsに代入。pagenate:10
     public function index()
     {
       $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
+      //NOTE: index.bladeに$postsをpostsに変えて渡し、表示
       return view('posts.index', ['posts' => $posts]);
     }
 
