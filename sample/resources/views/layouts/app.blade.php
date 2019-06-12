@@ -88,7 +88,7 @@
                         @endguest
 
                         <div class="mb-4" style="padding-top: 15px">
-                      <a href="{{ route('posts.create') }}" class="btn btn-primary" style="display:flex; justify-content: center;align-items: center; ">
+                      <a href="{{ route('posts.create') }}" class="btn btn-outline-primary" style="display:flex; justify-content: center;align-items: center; ">
                          let`s Tweet!
                       </a>
                     </div>

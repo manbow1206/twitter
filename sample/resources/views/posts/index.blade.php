@@ -26,7 +26,7 @@
                     </span>
 
                     @if ($post->comments->count())
-                        <span class="badge badge-primary">
+                    <span class="btn btn-outline-primary">
                             Comments {{ $post->comments->count() }}件
                         </span>
                     @endif

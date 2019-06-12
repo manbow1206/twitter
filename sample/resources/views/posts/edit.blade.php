@@ -4,7 +4,7 @@
     <div class="container mt-4">
         <div class="border p-4">
             <h1 class="h5 mb-4">
-                投稿の編集
+                Post Edit
             </h1>
 
             <form method="POST" action="{{ route('posts.update', ['post' => $post]) }}">
@@ -14,7 +14,7 @@
                 <fieldset class="mb-4">
                     <div class="form-group">
                         <label for="title">
-                            タイトル
+                            Title
                         </label>
                         <input
                             id="title"
@@ -32,7 +32,7 @@
 
                     <div class="form-group">
                         <label for="body">
-                            本文
+                            Text
                         </label>
 
                         <textarea
@@ -50,11 +50,11 @@
 
                     <div class="mt-5">
                         <a class="btn btn-secondary" href="{{ route('posts.show', ['post' => $post]) }}">
-                            キャンセル
+                            Cancel
                         </a>
 
                         <button type="submit" class="btn btn-primary">
-                            更新する
+                            Upload!
                         </button>
                     </div>
                 </fieldset>

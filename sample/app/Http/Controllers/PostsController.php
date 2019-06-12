@@ -47,9 +47,7 @@ class PostsController extends Controller
     {
      $post = Post::findOrFail($post_id);
 
-     return view('posts.edit', [
-         'post' => $post,
-     ]);
+     return view('posts.edit', ['post' => $post,]);
     }
 
 
