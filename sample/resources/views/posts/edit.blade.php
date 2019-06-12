@@ -6,7 +6,7 @@
             <h1 class="h5 mb-4">
                 Post Edit
             </h1>
-            <!--NOTE: ここでPosts.updateに値を送信-->
+
             <form method="POST" action="{{ route('posts.update', ['post' => $post]) }}">
                 @csrf
                 @method('PUT')
@@ -52,6 +52,7 @@
                         <a class="btn btn-secondary" href="{{ route('posts.show', ['post' => $post]) }}">
                             Cancel
                         </a>
+
                         <button type="submit" class="btn btn-primary">
                             Upload!
                         </button>

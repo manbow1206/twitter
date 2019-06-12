@@ -18,17 +18,17 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-//NOTE: 投稿一覧　
+//NOTE: 投稿一覧　名前:top
 Route::get('/', 'PostsController@index')->name('top');
-//NOTE: 投稿機能関係　
+//post
 Route::resource('posts', 'PostsController', ['only' => ['create', 'store','show','edit','update','destroy']]);
-//NOTE: コメント
+//comment
 Route::resource('comments', 'CommentsController', ['only' => ['store']]);
-//TODO: ユーザー一覧　->　フォーロー機能追加
+//Users
 Route::get('/users/index','UsersController@index');
 //Auth
 Auth::routes();
-//NOTE: 自分のプロフィール
+//profile
 Route::get('profile', 'PostsController@profile')->name('profile');
 
 
