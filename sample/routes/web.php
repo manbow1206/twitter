@@ -20,18 +20,18 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 //NOTE: 投稿一覧　名前:top
 Route::get('/', 'PostsController@index')->name('top');
-//post
+//NOTE: 投稿機能関連
 Route::resource('posts', 'PostsController', ['only' => ['create', 'store','show','edit','update','destroy']]);
-//comment
+//NOTE: コメント機能
 Route::resource('comments', 'CommentsController', ['only' => ['store']]);
-//Users
+//TODO: ユーザー一覧 -> フォーロー機能追加
 Route::get('/users/index','UsersController@index');
 //Auth
 Auth::routes();
-//profile
+//NOTE: 自分のプロフィール表示
 Route::get('profile', 'PostsController@profile')->name('profile');
 
 
-//Follow
+//TODO: フォーロー機能途中
 Route::post('follow/create','LikeController@create')->name('like');
 Route::post('follow/delete','LikeController@delete')->name('unlike');

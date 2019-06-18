@@ -24,6 +24,7 @@ class PostsController extends Controller
     }
 
 
+    //NOTE: バリデーダー適応
     public function store(Request $request)
     {
     $params = $request->validate([
@@ -37,6 +38,7 @@ class PostsController extends Controller
     }
 
 
+    //NOTE:　Postテーブルからpost_idを取ってきてビューに渡す
     public function show($post_id)
     {
       $post = Post::findOrFail($post_id);
@@ -45,7 +47,7 @@ class PostsController extends Controller
     ]);
     }
 
-
+    //NOTE: edit.bladeにPostテーブルの$post_idを渡している
     public function edit($post_id)
     {
      $post = Post::findOrFail($post_id);
@@ -63,6 +65,7 @@ class PostsController extends Controller
     ]);
 
     $post = Post::findOrFail($post_id);
+    //NOTE; $fill()は引数に代入した値を確認して、代入する
     $post->fill($params)->save();
 
     return redirect()->route('posts.show', ['post' => $post]);
@@ -73,6 +76,7 @@ class PostsController extends Controller
    {
     $post = Post::findOrFail($post_id);
 
+    //NOTE; DBファサードで$postをデリート
     \DB::transaction(function () use ($post) {
         $post->comments()->delete();
         $post->delete();
